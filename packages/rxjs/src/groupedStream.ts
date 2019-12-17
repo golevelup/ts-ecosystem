@@ -15,7 +15,7 @@ const defaultValue = { key: '', items: [] };
  * @template T
  * @param {Observable<T>} input - The Observable stream over which the grouping should occur
  * @param {(item: T) => string} keySelector - A function that should be used to select the grouping key for the item
- * @returns {Observable<T[]>} - The new Observable of grouped consecutive items
+ * @returns {Observable<T[]>} The new Observable of grouped consecutive items
  */
 export const groupedStream = <T>(
   input: Observable<T>,
