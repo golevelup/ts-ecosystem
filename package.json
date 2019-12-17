@@ -1,0 +1,18 @@
+{
+  "name": "ts-ecosystem",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jesse Carter <jesse.r.carter@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "lerna:publish": "yarn lerna run build && yarn test && yarn lerna publish -m 'chore: publish'",
+    "lerna:prerelease": "yarn lerna run build && yarn lerna publish prerelease --preid rc -m 'chore: publish prerelease'"
+  },
+  "devDependencies": {
+    "lerna": "^3.19.0"
+  }
+}
