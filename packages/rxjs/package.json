@@ -1,6 +1,6 @@
 {
   "name": "@golevelup/rxjs",
-  "version": "0.0.1",
+  "version": "0.0.2-rc.0",
   "description": "Extensions and Higher Level Observables for rxjs",
   "keywords": [
     "rxjs",
