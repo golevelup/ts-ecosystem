@@ -1,0 +1,14 @@
+0 silly argv {
+0 silly argv   _: [ 'add' ],
+0 silly argv   D: true,
+0 silly argv   dev: true,
+0 silly argv   scope: '@golevelup/amqplib',
+0 silly argv   globs: [ 'uuid' ],
+0 silly argv   lernaVersion: '3.19.0',
+0 silly argv   '$0': 'node_modules/.bin/lerna',
+0 silly argv   pkg: '@types/'
+0 silly argv }
+1 notice cli v3.19.0
+2 verbose rootPath /home/jesse/code/golevelup/ts-ecosystem
+3 info versioning independent
+4 error

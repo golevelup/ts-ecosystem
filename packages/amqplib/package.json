@@ -1,0 +1,43 @@
+{
+  "name": "@golevelup/amqplib",
+  "version": "0.0.1",
+  "description": "Modern and Exensible client for leveled up AMQP interactions",
+  "keywords": [
+    "amqplib",
+    "rabbitmq",
+    "typescript",
+    "rxjs"
+  ],
+  "author": "Jesse Carter <jesse.r.carter@gmail.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/golevelup/ts-ecosystem.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc --build"
+  },
+  "dependencies": {
+    "amqplib": "^0.5.5",
+    "rxjs": "^6.5.3",
+    "uuid": "^3.3.3"
+  },
+  "gitHead": "3dbd053770eebd243c04e37a4d630c4b01b157b7",
+  "devDependencies": {
+    "@types/amqplib": "^0.5.13",
+    "@types/uuid": "^3.4.6"
+  }
+}

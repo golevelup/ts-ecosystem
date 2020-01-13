@@ -13,6 +13,11 @@
     "lerna:prerelease": "yarn lerna run build && yarn lerna publish prerelease --preid rc -m 'chore: publish prerelease'"
   },
   "devDependencies": {
-    "lerna": "^3.19.0"
+    "@types/jest": "^24.0.25",
+    "jest": "^24.9.0",
+    "lerna": "^3.19.0",
+    "lint-staged": "^9.5.0",
+    "ts-jest": "^24.3.0",
+    "typescript": "^3.7.4"
   }
 }
