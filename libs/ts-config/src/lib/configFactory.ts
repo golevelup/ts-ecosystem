@@ -2,6 +2,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 import * as dotenv from 'dotenv';
 import * as convict from 'convict';
+const parent = require('parent-module');
 
 export type CommonNodeEnv = 'production' | 'development' | 'test';
 
@@ -58,14 +59,20 @@ export const createConfig = <K, T extends string = CommonNodeEnv>(
 
   const config = convict<K>(schema);
 
+  const caller = parent();
+
   jsonPaths.forEach(x => {
-    const jsonPath = path.isAbsolute(x) ? x : path.join(__dirname, x);
+    const jsonPath = path.isAbsolute(x)
+      ? x
+      : path.join(path.dirname(caller), x);
     log(`Attempting to load JSON config file at: '${x}'`);
     config.loadFile(jsonPath);
   });
 
   dotEnvPaths.forEach(x => {
-    const dotEnvPath = path.isAbsolute(x) ? x : path.join(__dirname, x);
+    const dotEnvPath = path.isAbsolute(x)
+      ? x
+      : path.join(path.dirname(caller), x);
     const exists = fs.existsSync(dotEnvPath);
     if (!exists && strict) {
       throw new Error(`Could not find file ${dotEnvPath}`);
@@ -80,8 +87,6 @@ export const createConfig = <K, T extends string = CommonNodeEnv>(
     if (exists) {
       dotenv.config({ path: dotEnvPath });
     }
-
-    console.log(process.env);
   });
 
   const validated = config.validate({

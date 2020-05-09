@@ -41,7 +41,7 @@ describe('ts-config', () => {
       strict: true,
       environmentConfigFiles: {
         test: {
-          dotEnvPaths: ['../test/test.env']
+          dotEnvPaths: ['./test.env']
         }
       }
     });

@@ -31,7 +31,8 @@
   "private": true,
   "dependencies": {
     "convict": "^6.0.0",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "parent-module": "^2.0.0"
   },
   "devDependencies": {
     "@nrwl/eslint-plugin-nx": "9.2.4",
