@@ -5,19 +5,19 @@ import * as convict from 'convict';
 export type CommonNodeEnv = 'production' | 'development' | 'test';
 
 export interface EnvConfig {
-  dotEnvPaths: string | string[];
-  jsonPaths: string | string[];
+  dotEnvPaths?: string | string[];
+  jsonPaths?: string | string[];
 }
 
 export type NodeEnvConfigMap<T extends string> = Partial<Record<T, EnvConfig>>;
 
-export const makeConfig = <K, T extends string = CommonNodeEnv>(
-  configMap: NodeEnvConfigMap<T>,
-  schema: convict.Schema<K>
+export const createConfig = <K, T extends string = CommonNodeEnv>(
+  schema: convict.Schema<K>,
+  environmentConfigFiles?: NodeEnvConfigMap<T>
 ): convict.Config<K> => {
   const nodeEnv = (process.env.NODE_ENV || 'development') as T;
 
-  const envConfigMap = configMap[nodeEnv];
+  const envConfigMap = environmentConfigFiles[nodeEnv];
   const parsedDotEnvPaths = envConfigMap?.dotEnvPaths || [];
   const parsedJsonPaths = envConfigMap?.jsonPaths || [];
 

@@ -7,6 +7,9 @@
   "devDependencies": {
     "@types/convict": "^5.2.0"
   },
+  "peerDependencies": {
+    "@types/convict": "^5.2.0"
+  },
   "publishConfig": {
     "access": "public",
     "directory": "../../dist/libs/ts-config"

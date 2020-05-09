@@ -24,6 +24,7 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "publish:libs": "lerna publish",
+    "publish:libs:prerelease": "lerna publish prerelease --preid rc -m 'chore: publish prerelease'",
     "postversion": "nx affected:build",
     "help": "nx help"
   },
