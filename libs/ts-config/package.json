@@ -1,6 +1,6 @@
 {
   "name": "@golevelup/ts-config",
-  "version": "0.0.3-rc.0",
+  "version": "0.0.3-rc.1",
   "dependencies": {
     "convict": "^6.0.0"
   },
