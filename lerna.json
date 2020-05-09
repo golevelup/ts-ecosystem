@@ -1,6 +1,13 @@
 {
-  "packages": ["packages/*"],
+  "packages": ["libs/*"],
   "version": "independent",
-  "npmClient": "yarn",
-  "useWorkspaces": true
+  "command": {
+    "publish": {
+      "conventionalCommits": true,
+      "yes": true
+    },
+    "version": {
+      "message": "chore(release): publish %v [skip travis]"
+    }
+  }
 }
