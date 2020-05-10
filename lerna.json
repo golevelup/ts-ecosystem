@@ -7,7 +7,7 @@
       "yes": true
     },
     "version": {
-      "message": "chore(release): publish %v [skip travis]"
+      "message": "chore(release): publish"
     }
   }
 }

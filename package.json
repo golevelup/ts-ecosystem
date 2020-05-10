@@ -1,5 +1,5 @@
 {
-  "name": "golevelup",
+  "name": "golevelup-ts-ecosystem",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -26,15 +26,18 @@
     "publish:libs": "lerna publish",
     "publish:libs:prerelease": "lerna publish prerelease --preid rc -m 'chore: publish prerelease'",
     "postversion": "nx affected:build",
+    "commit": "yarn git-cz",
     "help": "nx help"
   },
   "private": true,
   "dependencies": {
-    "convict": "^6.0.0",
+    "convict": "6.0.0",
     "lodash": "^4.17.15",
     "parent-module": "^2.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@nrwl/eslint-plugin-nx": "9.2.4",
     "@nrwl/jest": "9.2.4",
     "@nrwl/node": "^9.2.4",
@@ -50,6 +53,7 @@
     "dotenv": "6.2.0",
     "eslint": "6.8.0",
     "eslint-config-prettier": "6.0.0",
+    "husky": "^4.2.5",
     "jest": "25.2.3",
     "lerna": "^3.20.2",
     "prettier": "1.19.1",
@@ -61,6 +65,11 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
 }

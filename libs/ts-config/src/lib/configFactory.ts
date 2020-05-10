@@ -4,7 +4,7 @@ import * as dotenv from 'dotenv';
 import * as convict from 'convict';
 const parent = require('parent-module');
 
-export type CommonNodeEnv = 'production' | 'development' | 'test';
+export type CommonNodeEnv = 'production' | 'staging' | 'development' | 'test';
 
 export interface EnvConfig {
   dotEnvPaths?: string | string[];
@@ -57,17 +57,7 @@ export const createConfig = <K, T extends string = CommonNodeEnv>(
     ? parsedJsonPaths
     : [parsedJsonPaths];
 
-  const config = convict<K>(schema);
-
   const caller = parent();
-
-  jsonPaths.forEach(x => {
-    const jsonPath = path.isAbsolute(x)
-      ? x
-      : path.join(path.dirname(caller), x);
-    log(`Attempting to load JSON config file at: '${x}'`);
-    config.loadFile(jsonPath);
-  });
 
   dotEnvPaths.forEach(x => {
     const dotEnvPath = path.isAbsolute(x)
@@ -85,8 +75,22 @@ export const createConfig = <K, T extends string = CommonNodeEnv>(
     );
 
     if (exists) {
-      dotenv.config({ path: dotEnvPath });
+      const result = dotenv.config({ path: dotEnvPath });
+      if (result.error) {
+        throw new Error(result.error);
+      }
+      log(JSON.stringify(result));
     }
+  });
+
+  const config = convict<K>(schema);
+
+  jsonPaths.forEach(x => {
+    const jsonPath = path.isAbsolute(x)
+      ? x
+      : path.join(path.dirname(caller), x);
+    log(`Attempting to load JSON config file at: '${x}'`);
+    config.loadFile(jsonPath);
   });
 
   const validated = config.validate({
