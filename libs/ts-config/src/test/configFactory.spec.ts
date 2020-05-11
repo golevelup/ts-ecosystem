@@ -64,6 +64,9 @@ describe('ts-config', () => {
     expect(config.get('name')).toBe('WonderPanda');
     expect(config.get('age')).toBe(30);
     expect(config.get('nested').value).toBe('awesome');
+    expect(config.get('nested.value')).toBe('awesome');
+
+    const something = config.get('nested.value');
   });
 
   it('loads json files', () => {
