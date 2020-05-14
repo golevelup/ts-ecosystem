@@ -24,11 +24,12 @@ const schema: convict.Schema<TestConfig> = {
   }
 };
 
-describe('ts-config', () => {
+describe('profiguration', () => {
   it('throws errors for missing .env files in strict mode', () => {
     expect(() =>
       createConfig<TestConfig>(schema, {
         strict: true,
+        loadFrom: 'parent-module',
         environmentConfigFiles: {
           test: {
             dotEnvPaths: ['asdfasdf']
@@ -42,6 +43,7 @@ describe('ts-config', () => {
     expect(() =>
       createConfig<TestConfig>(schema, {
         strict: true,
+        loadFrom: 'parent-module',
         environmentConfigFiles: {
           test: {
             jsonPaths: ['asdfasdf']
@@ -54,6 +56,7 @@ describe('ts-config', () => {
   it('loads and uses env files', () => {
     const config = createConfig<TestConfig>(schema, {
       strict: true,
+      loadFrom: 'parent-module',
       environmentConfigFiles: {
         test: {
           dotEnvPaths: ['./test.env']
@@ -87,6 +90,7 @@ describe('ts-config', () => {
 
     const config = createConfig<TestConfig>(jsonSchema, {
       strict: true,
+      loadFrom: 'parent-module',
       environmentConfigFiles: {
         test: {
           jsonPaths: ['./test.json']
@@ -100,6 +104,7 @@ describe('ts-config', () => {
   it('respects json -> .env -> env vars precedence', () => {
     const config = createConfig<TestConfig>(schema, {
       strict: true,
+      loadFrom: 'parent-module',
       environmentConfigFiles: {
         test: {
           dotEnvPaths: ['./test.env'],

@@ -1,8 +1,9 @@
 {
-  "name": "@golevelup/ts-config",
+  "name": "@golevelup/profiguration",
   "version": "0.0.3-rc.3",
   "dependencies": {
-    "convict": "^6.0.0"
+    "convict": "^6.0.0",
+    "@types/convict": "^5.2.0"
   },
   "devDependencies": {
     "@types/convict": "^5.2.0"
@@ -12,6 +13,6 @@
   },
   "publishConfig": {
     "access": "public",
-    "directory": "../../dist/libs/ts-config"
+    "directory": "../../dist/libs/profiguration"
   }
 }

@@ -1,9 +1,9 @@
 {
   "version": 1,
   "projects": {
-    "ts-config": {
-      "root": "libs/ts-config",
-      "sourceRoot": "libs/ts-config/src",
+    "profiguration": {
+      "root": "libs/profiguration",
+      "sourceRoot": "libs/profiguration/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
@@ -11,37 +11,101 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "config": "libs/ts-config/.eslintrc",
+            "config": "libs/profiguration/.eslintrc",
             "tsConfig": [
-              "libs/ts-config/tsconfig.lib.json",
-              "libs/ts-config/tsconfig.spec.json"
+              "libs/profiguration/tsconfig.lib.json",
+              "libs/profiguration/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/ts-config/**"]
+            "exclude": ["**/node_modules/**", "!libs/profiguration/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/ts-config/jest.config.js",
-            "tsConfig": "libs/ts-config/tsconfig.spec.json",
+            "jestConfig": "libs/profiguration/jest.config.js",
+            "tsConfig": "libs/profiguration/tsconfig.spec.json",
             "passWithNoTests": true
           }
         },
         "build": {
           "builder": "@nrwl/node:package",
           "options": {
-            "outputPath": "dist/libs/ts-config",
-            "tsConfig": "libs/ts-config/tsconfig.lib.json",
-            "packageJson": "libs/ts-config/package.json",
-            "main": "libs/ts-config/src/index.ts",
-            "assets": ["libs/ts-config/*.md"]
+            "outputPath": "dist/libs/profiguration",
+            "tsConfig": "libs/profiguration/tsconfig.lib.json",
+            "packageJson": "libs/profiguration/package.json",
+            "main": "libs/profiguration/src/index.ts",
+            "assets": ["libs/profiguration/*.md"]
+          }
+        }
+      }
+    },
+    "example-nestjs-app": {
+      "root": "apps/example-nestjs-app",
+      "sourceRoot": "apps/example-nestjs-app/src",
+      "projectType": "application",
+      "prefix": "example-nestjs-app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/example-nestjs-app",
+            "main": "apps/example-nestjs-app/src/main.ts",
+            "tsConfig": "apps/example-nestjs-app/tsconfig.app.json",
+            "assets": [
+              "apps/example-nestjs-app/src/assets",
+              {
+                "glob": "*.env",
+                "input": "apps/example-nestjs-app/",
+                "output": "./"
+              }
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/example-nestjs-app/src/environments/environment.ts",
+                  "with": "apps/example-nestjs-app/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "example-nestjs-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "apps/example-nestjs-app/.eslintrc",
+            "tsConfig": [
+              "apps/example-nestjs-app/tsconfig.app.json",
+              "apps/example-nestjs-app/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/example-nestjs-app/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/example-nestjs-app/jest.config.js",
+            "tsConfig": "apps/example-nestjs-app/tsconfig.spec.json",
+            "passWithNoTests": true
           }
         }
       }
     }
   },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
+    "defaultCollection": "@nrwl/nest"
   },
   "schematics": {
     "@nrwl/workspace": {
@@ -98,5 +162,6 @@
         "linter": "eslint"
       }
     }
-  }
+  },
+  "defaultProject": "example-nestjs-app"
 }

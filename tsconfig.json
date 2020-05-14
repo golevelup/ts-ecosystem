@@ -16,7 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@golevelup/ts-config": ["libs/ts-config/src/index.ts"]
+      "@golevelup/profiguration": ["libs/profiguration/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

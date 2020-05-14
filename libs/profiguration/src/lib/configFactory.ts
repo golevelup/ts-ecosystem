@@ -4,6 +4,8 @@ import * as dotenv from 'dotenv';
 import * as convict from 'convict';
 const parent = require('parent-module');
 
+export type Schema<T> = convict.Schema<T>;
+
 export type CommonNodeEnv = 'production' | 'staging' | 'development' | 'test';
 
 export interface EnvConfig {
@@ -13,28 +15,39 @@ export interface EnvConfig {
 
 export type NodeEnvConfigMap<T extends string> = Partial<Record<T, EnvConfig>>;
 
+type LoadFrom = 'cwd' | 'parent-module';
+
 export interface ConfigLoadOptions<T extends string = CommonNodeEnv> {
   environmentConfigFiles?: NodeEnvConfigMap<T>;
   strict?: boolean;
   verbose?: boolean;
+  loadFrom?: LoadFrom;
 }
 
 const defaultConfigLoadOptions: ConfigLoadOptions = {
   strict: true,
-  verbose: false
+  verbose: false,
+  loadFrom: 'cwd'
 };
 
 const makeConditionalLogger = (enabled: boolean) => (message: string) => {
   if (enabled) {
-    console.log(`@golevelup/ts-config: ${message}`);
+    console.log(`@golevelup/profiguration: ${message}`);
   }
 };
+
+const resolveFilePath = (basePath: string, loadFrom: LoadFrom, parent: any) =>
+  path.isAbsolute(basePath)
+    ? basePath
+    : loadFrom === 'cwd'
+    ? path.resolve(process.cwd(), basePath)
+    : path.join(path.dirname(parent), basePath);
 
 export const createConfig = <K, T extends string = CommonNodeEnv>(
   schema: convict.Schema<K>,
   configLoadOptions?: ConfigLoadOptions<T>
 ): convict.Config<K> => {
-  const { verbose, strict, environmentConfigFiles } = {
+  const { verbose, strict, loadFrom, environmentConfigFiles } = {
     ...defaultConfigLoadOptions,
     ...(configLoadOptions || {})
   };
@@ -60,9 +73,7 @@ export const createConfig = <K, T extends string = CommonNodeEnv>(
   const caller = parent();
 
   dotEnvPaths.forEach(x => {
-    const dotEnvPath = path.isAbsolute(x)
-      ? x
-      : path.join(path.dirname(caller), x);
+    const dotEnvPath = resolveFilePath(x, loadFrom, caller);
     const exists = fs.existsSync(dotEnvPath);
     if (!exists && strict) {
       throw new Error(`Could not find file ${dotEnvPath}`);
@@ -86,9 +97,7 @@ export const createConfig = <K, T extends string = CommonNodeEnv>(
   const config = convict<K>(schema);
 
   jsonPaths.forEach(x => {
-    const jsonPath = path.isAbsolute(x)
-      ? x
-      : path.join(path.dirname(caller), x);
+    const jsonPath = resolveFilePath(x, loadFrom, caller);
     log(`Attempting to load JSON config file at: '${x}'`);
     config.loadFile(jsonPath);
   });

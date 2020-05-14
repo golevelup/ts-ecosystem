@@ -19,7 +19,10 @@
     }
   },
   "projects": {
-    "ts-config": {
+    "profiguration": {
+      "tags": []
+    },
+    "example-nestjs-app": {
       "tags": []
     }
   }
