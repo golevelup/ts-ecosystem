@@ -53,11 +53,17 @@ export const config = createProfiguration<Config>(
     }
   },
   {
-    logger: (message: string) => Logger.log(message),
+    strict: true,
     verbose: true,
     loadRelativeTo: 'parent-module',
-    configureEnv: env => ({
-      files: `${env}.env`
-    })
+    configureEnv: env => {
+      const baseEnv = 'development.env';
+
+      return {
+        logger:
+          env === 'test' ? undefined : (message: string) => Logger.log(message),
+        files: env === 'test' ? `../${baseEnv}` : baseEnv
+      };
+    }
   }
 );
