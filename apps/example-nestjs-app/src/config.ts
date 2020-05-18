@@ -1,4 +1,5 @@
-import { createConfig } from '@golevelup/profiguration';
+import { createProfiguration } from '@golevelup/profiguration';
+import { Logger } from '@nestjs/common';
 
 interface Config {
   db: {
@@ -14,7 +15,7 @@ interface Config {
   showWelcomeMessage: boolean;
 }
 
-export const config = createConfig<Config>(
+export const config = createProfiguration<Config>(
   {
     appPort: {
       default: 3333,
@@ -52,10 +53,11 @@ export const config = createConfig<Config>(
     }
   },
   {
-    environmentConfigFiles: {
-      development: {
-        dotEnvPaths: 'development.env'
-      }
-    }
+    logger: (message: string) => Logger.log(message),
+    verbose: true,
+    loadRelativeTo: 'parent-module',
+    configureEnv: env => ({
+      files: `${env}.env`
+    })
   }
 );
