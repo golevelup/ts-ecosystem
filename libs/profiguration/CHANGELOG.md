@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0](https://github.com/golevelup/ts-ecosystem/compare/@golevelup/profiguration@0.1.0-rc.0...@golevelup/profiguration@0.1.0) (2020-05-18)
+
+
+### Features
+
+* **profiguration:** allow .env file prefix ([8c78742](https://github.com/golevelup/ts-ecosystem/commit/8c787427b182c9e7a1aaf054234bb0fa47aedf97))
+
+
+
+
+
 # 0.1.0-rc.0 (2020-05-18)
 
 ### Features
