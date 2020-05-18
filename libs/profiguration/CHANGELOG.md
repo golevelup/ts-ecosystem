@@ -5,15 +5,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # 0.1.0-rc.0 (2020-05-18)
 
-
 ### Features
 
-* **profiguration:** functional env setup ([88dd4f4](https://github.com/golevelup/ts-ecosystem/commit/88dd4f46021511e48a4cdb99d186f99a8170426d))
-* rename config package and add sample nest app ([32aa6ae](https://github.com/golevelup/ts-ecosystem/commit/32aa6ae96f421d7d96a8100bc9549e976c05424d))
-
-
-
-
+- **profiguration:** functional env setup ([88dd4f4](https://github.com/golevelup/ts-ecosystem/commit/88dd4f46021511e48a4cdb99d186f99a8170426d))
+- rename config package and add sample nest app ([32aa6ae](https://github.com/golevelup/ts-ecosystem/commit/32aa6ae96f421d7d96a8100bc9549e976c05424d))
 
 ## [0.0.3-rc.3](https://github.com/golevelup/ts-ecosystem/compare/@golevelup/ts-config@0.0.3-rc.2...@golevelup/ts-config@0.0.3-rc.3) (2020-05-10)
 
