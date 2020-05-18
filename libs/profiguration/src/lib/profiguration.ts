@@ -47,6 +47,9 @@ const defaultConfigLoadOptions: Required<ConfigLoadOptions> = {
   configureEnv: env => ({})
 };
 
+const isEnvFile = (file: string) =>
+  file.startsWith('.env') || file.endsWith('.env');
+
 const makeConditionalLogger = (
   enabled: boolean,
   logger: (...args: any[]) => void
@@ -101,7 +104,7 @@ export const createProfiguration = <K>(
 
   const [willProcess, wontProcess] = partition(
     normalizedFiles,
-    x => x.endsWith('.env') || x.startsWith('.env') || x.endsWith('.json')
+    x => isEnvFile(x) || x.endsWith('.json')
   );
 
   if (wontProcess.length) {
@@ -133,7 +136,7 @@ export const createProfiguration = <K>(
   }
 
   const [dotEnvPaths, jsonPaths] = partition(exists, x =>
-    x.filePath.endsWith('.env')
+    isEnvFile(x.filePath)
   );
 
   dotEnvPaths.forEach(x => {
