@@ -101,7 +101,7 @@ export const createProfiguration = <K>(
 
   const [willProcess, wontProcess] = partition(
     normalizedFiles,
-    x => x.endsWith('.env') || x.endsWith('.json')
+    x => x.endsWith('.env') || x.startsWith('.env') || x.endsWith('.json')
   );
 
   if (wontProcess.length) {
