@@ -1,10 +1,10 @@
-# @golevelup/ts-config
+# @golevelup/profiguration
 
 ## Features
 
 - Load configuration from .env files or json files automatically with hierarchical overriding
 - Easily control which configuration files get loaded based on your Node Environment
-- Built in support for Validation of different types
+- Built in support for validation of different types
 - Intellisense and Type Safety
 - Simple testing utilties for when you want to mock your configuration
 
@@ -12,8 +12,8 @@
 
 ### Install
 
-`npm install ---save @golevelup/ts-config`
+`npm install ---save @golevelup/profiguration`
 
 or
 
-`yarn add @golevelup/ts-config`
+`yarn add @golevelup/profiguration`
