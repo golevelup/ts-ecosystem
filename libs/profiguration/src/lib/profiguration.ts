@@ -136,7 +136,7 @@ export const createProfiguration = <K>(
   }
 
   const [dotEnvPaths, jsonPaths] = partition(exists, x =>
-    isEnvFile(x.filePath)
+    isEnvFile(path.basename(x.filePath))
   );
 
   dotEnvPaths.forEach(x => {

@@ -71,12 +71,27 @@ describe('profiguration', () => {
     ).not.toThrow();
   });
 
-  it('loads and uses env files', () => {
+  it('loads and uses env files with .env extension', () => {
     const config = createProfiguration<TestConfig>(schema, {
       strict: true,
       loadRelativeTo: 'parent-module',
       configureEnv: (env: string) => ({
         files: ['test.env']
+      })
+    });
+
+    expect(config.get('name')).toBe('WonderPanda');
+    expect(config.get('age')).toBe(30);
+    expect(config.get('nested').value).toBe('awesome');
+    expect(config.get('nested.value')).toBe('awesome');
+  });
+
+  it('loads and uses env files with .env prefix', () => {
+    const config = createProfiguration<TestConfig>(schema, {
+      strict: true,
+      loadRelativeTo: 'parent-module',
+      configureEnv: (env: string) => ({
+        files: ['.env.test']
       })
     });
 
