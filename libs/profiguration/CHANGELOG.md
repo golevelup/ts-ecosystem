@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/golevelup/ts-ecosystem/compare/@golevelup/profiguration@0.1.0...@golevelup/profiguration@0.1.1) (2020-05-18)
+
+
+### Bug Fixes
+
+* **profiguration:** isEnvFile check ([7df183a](https://github.com/golevelup/ts-ecosystem/commit/7df183a101622125462dc5b451a11fd7c94b2406))
+
+
+
+
+
 # [0.1.0](https://github.com/golevelup/ts-ecosystem/compare/@golevelup/profiguration@0.1.0-rc.0...@golevelup/profiguration@0.1.0) (2020-05-18)
 
 ### Features
