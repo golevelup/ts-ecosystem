@@ -1,9 +1,9 @@
 {
   "name": "@golevelup/profiguration",
-  "version": "0.0.3-rc.3",
+  "version": "0.1.0-rc.0",
   "dependencies": {
-    "convict": "^6.0.0",
-    "@types/convict": "^5.2.0"
+    "@types/convict": "^5.2.0",
+    "convict": "^6.0.0"
   },
   "devDependencies": {
     "@types/convict": "^5.2.0"
