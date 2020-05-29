@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3-rc.3](https://github.com/golevelup/ts-ecosystem/compare/@golevelup/profiguration@0.1.3-rc.2...@golevelup/profiguration@0.1.3-rc.3) (2020-05-29)
+
+
+### Bug Fixes
+
+* **profiguration:** remove createConfigMock ([609ee55](https://github.com/golevelup/ts-ecosystem/commit/609ee55c644155f43e11cfcc7b3701000eb9f877))
+
+
+
+
+
 ## [0.1.3-rc.2](https://github.com/golevelup/ts-ecosystem/compare/@golevelup/profiguration@0.1.3-rc.1...@golevelup/profiguration@0.1.3-rc.2) (2020-05-29)
 
 ### Bug Fixes
