@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3-rc.0](https://github.com/golevelup/ts-ecosystem/compare/@golevelup/profiguration@0.1.2...@golevelup/profiguration@0.1.3-rc.0) (2020-05-29)
+
+
+### Bug Fixes
+
+* **profiguration:** dependencies ([f22857c](https://github.com/golevelup/ts-ecosystem/commit/f22857c7eb30db46b686c2c3840879e1b201e1e4))
+
+
+
+
+
 ## [0.1.2](https://github.com/golevelup/ts-ecosystem/compare/@golevelup/profiguration@0.1.1...@golevelup/profiguration@0.1.2) (2020-05-18)
 
 
