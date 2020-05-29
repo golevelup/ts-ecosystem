@@ -1,8 +1,11 @@
 import * as path from 'path';
 import * as fs from 'fs';
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+// @ts-ignore
 import * as dotenv from 'dotenv';
 import { partition } from 'lodash';
 import * as convict from 'convict';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const parent = require('parent-module');
 
 export type Schema<T> = convict.Schema<T>;
