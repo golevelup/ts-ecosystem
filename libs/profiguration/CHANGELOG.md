@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/golevelup/ts-ecosystem/compare/@golevelup/profiguration@0.2.0...@golevelup/profiguration@0.2.1) (2020-05-29)
+
+
+### Bug Fixes
+
+* **profiguration:** include dotenv in deps ([ac8efb0](https://github.com/golevelup/ts-ecosystem/commit/ac8efb0f032107b3463e30733b74a4cf3c17a794))
+
+
+
+
+
 # [0.2.0](https://github.com/golevelup/ts-ecosystem/compare/@golevelup/profiguration@0.1.3-rc.3...@golevelup/profiguration@0.2.0) (2020-05-29)
 
 **Note:** Version bump only for package @golevelup/profiguration
