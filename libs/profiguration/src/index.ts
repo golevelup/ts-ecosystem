@@ -1,2 +1,2 @@
 export * from './lib/profiguration';
-export * from './lib/configMock';
+// export * from './lib/configMock';
