@@ -2,11 +2,9 @@
   "name": "@golevelup/profiguration",
   "version": "0.1.2",
   "dependencies": {
-    "@types/convict": "^5.2.0",
-    "convict": "^6.0.0"
-  },
-  "devDependencies": {
-    "@types/convict": "^5.2.0"
+    "convict": "^6.0.0",
+    "parent-module": "^2.0.0",
+    "lodash": "^4.17.15"
   },
   "peerDependencies": {
     "@types/convict": "^5.2.0"
