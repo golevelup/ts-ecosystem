@@ -5,36 +5,21 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [0.1.3-rc.0](https://github.com/golevelup/ts-ecosystem/compare/@golevelup/profiguration@0.1.2...@golevelup/profiguration@0.1.3-rc.0) (2020-05-29)
 
-
 ### Bug Fixes
 
-* **profiguration:** dependencies ([f22857c](https://github.com/golevelup/ts-ecosystem/commit/f22857c7eb30db46b686c2c3840879e1b201e1e4))
-
-
-
-
+- **profiguration:** dependencies ([f22857c](https://github.com/golevelup/ts-ecosystem/commit/f22857c7eb30db46b686c2c3840879e1b201e1e4))
 
 ## [0.1.2](https://github.com/golevelup/ts-ecosystem/compare/@golevelup/profiguration@0.1.1...@golevelup/profiguration@0.1.2) (2020-05-18)
 
-
 ### Bug Fixes
 
-* **profiguration:** ref .env prefix and file extension ([840a776](https://github.com/golevelup/ts-ecosystem/commit/840a776077d92d4f97534fb15dccc1be4e80fe69))
-
-
-
-
+- **profiguration:** ref .env prefix and file extension ([840a776](https://github.com/golevelup/ts-ecosystem/commit/840a776077d92d4f97534fb15dccc1be4e80fe69))
 
 ## [0.1.1](https://github.com/golevelup/ts-ecosystem/compare/@golevelup/profiguration@0.1.0...@golevelup/profiguration@0.1.1) (2020-05-18)
 
-
 ### Bug Fixes
 
-* **profiguration:** isEnvFile check ([7df183a](https://github.com/golevelup/ts-ecosystem/commit/7df183a101622125462dc5b451a11fd7c94b2406))
-
-
-
-
+- **profiguration:** isEnvFile check ([7df183a](https://github.com/golevelup/ts-ecosystem/commit/7df183a101622125462dc5b451a11fd7c94b2406))
 
 # [0.1.0](https://github.com/golevelup/ts-ecosystem/compare/@golevelup/profiguration@0.1.0-rc.0...@golevelup/profiguration@0.1.0) (2020-05-18)
 
