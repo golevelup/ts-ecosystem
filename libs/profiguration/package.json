@@ -15,5 +15,6 @@
     "access": "public",
     "directory": "../../dist/libs/profiguration"
   },
+  "repository": "https://github.com/golevelup/ts-ecosystem/tree/master/libs/profiguration",
   "gitHead": "2cf1db4f60678c86eb3ba0532a68e783d7004832"
 }
