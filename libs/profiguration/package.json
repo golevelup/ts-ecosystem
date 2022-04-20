@@ -2,7 +2,7 @@
   "name": "@golevelup/profiguration",
   "version": "0.2.1",
   "dependencies": {
-    "convict": "^6.0.0",
+    "convict": "^6.2.2",
     "dotenv": "6.2.0",
     "lodash": "^4.17.15",
     "parent-module": "^2.0.0"
