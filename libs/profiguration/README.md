@@ -17,10 +17,12 @@ Profiguration is currently built on top of the rock solid [Convict configuration
 ### Install
 
 `npm install ---save @golevelup/profiguration`
+`npm install --save-dev @types/convict`
 
 or
 
 `yarn add @golevelup/profiguration`
+`yarn add -D @types/convict`
 
 ### Define an interface to represent your Profiguration
 
