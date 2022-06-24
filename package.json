@@ -35,7 +35,7 @@
     "@nestjs/config": "^0.4.2",
     "@nestjs/core": "^6.8.3",
     "@nestjs/platform-express": "^6.8.3",
-    "convict": "6.0.0",
+    "convict": "6.2.3",
     "lodash": "^4.17.15",
     "parent-module": "^2.0.0",
     "reflect-metadata": "^0.1.13"
