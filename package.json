@@ -33,7 +33,7 @@
   "dependencies": {
     "@nestjs/common": "^6.8.3",
     "@nestjs/config": "^0.4.2",
-    "@nestjs/core": "^6.8.3",
+    "@nestjs/core": "^9.0.5",
     "@nestjs/platform-express": "^6.8.3",
     "convict": "6.2.4",
     "lodash": "^4.17.15",
